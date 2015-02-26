@@ -1,9 +1,10 @@
 # NearSpacePi
 
-## A raspberry pi based weather balloon monitoring system built on ruby on rails
-## Hosted on the pi as its carried to 60,000ft+ for a stratospheric webserver!
+A raspberry pi based weather balloon monitoring system built on ruby on rails
 
-### Stream real time telemetry and video
+Hosted on the pi as its carried to 60,000ft+ for a stratospheric webserver!
+
+FEATURING: Streaming of real time telemetry and video
 
 ### Hardware
 
