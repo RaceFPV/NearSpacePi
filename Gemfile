@@ -28,7 +28,6 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-gem 'pi_piper'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -40,6 +39,10 @@ gem 'pi_piper'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-gem 'puma'
+  gem 'puma'
+end
+
+group :production do
+  gem 'pi_piper'
 end
 
