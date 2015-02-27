@@ -57,9 +57,9 @@ class Image < Readfile
 
   def latest()
     dir = @location
-    files = Dir.glob(dir+"*.{png, jpg}").collect { |file| file }.sort { |file2,file1| File.mtime(dir+file1) <=> File.mtime(dir+file2) }
+    files = Dir.glob(dir+"*.{png}").collect { |file| file }.sort { |file2,file1| File.mtime(dir+file1) <=> File.mtime(dir+file2) }
     unless files.first.present? then return {Time.now => "N/A"} end
     latest = files.first.gsub(dir, '')
-    return {File.open(dir+latest, "r").mtime => dir+latest}
+    return {File.open(dir+latest, "r").mtime => latest}
   end
 end

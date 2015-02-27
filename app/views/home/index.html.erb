@@ -19,7 +19,8 @@
     <div class="panel panel-default">
       <div class="panel-body homepanel">
         <h3 class="paneltitle">Live feed</h3>
-        <%= image_tag @latestimage %>
+        <p>Most recent image: <%= time_ago_in_words(@latestimage.first) %> ago</p>
+        <%= image_tag custom_image_path(@latestimage.second) %>
       </div>
     </div>
   </div>

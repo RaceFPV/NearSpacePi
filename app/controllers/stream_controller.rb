@@ -9,4 +9,8 @@ class StreamController < ApplicationController
     @telemetrydata = telemetryfile.second
     unless @telemetrydata.present? then @telemetrydata = "N/A" end
   end
+
+  def show
+    send_file File.join('./streamed_images/',params[:name] + '.png'), :disposition => 'inline'
+  end
 end

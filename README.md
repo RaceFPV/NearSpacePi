@@ -23,3 +23,8 @@ FEATURING: Streaming of real time telemetry and video on a lightweight webpage
 * GPIO 7 -- External temp sensor
 * GPIO 7 -- Humidity sensor
 * GPIO 9, GPIO 10, GPIO 11 -- RGB LED
+
+### Notes
+
+* image file types supported: .png
+* assuming default directory for pi camera images is 'streamed_images'
