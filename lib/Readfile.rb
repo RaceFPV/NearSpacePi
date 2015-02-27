@@ -48,13 +48,6 @@ end
 
 #get an image file
 class Image < Readfile
-  def image()
-    path = @location
-    file = File.open(path, "r")
-    image = file.read
-    return {file.mtime => image}
-  end
-
   def latest()
     dir = @location
     files = Dir.glob(dir+"*.{png}").collect { |file| file }.sort { |file2,file1| File.mtime(dir+file1) <=> File.mtime(dir+file2) }
