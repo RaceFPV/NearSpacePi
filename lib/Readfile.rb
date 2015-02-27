@@ -42,6 +42,6 @@ class Tail < Readfile
 
   file.seek(offset)
   data = file.read
-  return data
+  return {file.mtime => data}
 end
 end

@@ -1,8 +1,12 @@
 class StreamController < ApplicationController
   def index
-    fromfile = Tail.new('test.txt')
-    @lastline = fromfile.tail(1)
-    telemetryfile = Tail.new('../telemetry.txt')
-    @telemetry = telemetryfile.tail(1)
+    testfile = Tail.new('test.txt').tail(1).flatten
+    @testfiletime = testfile.first
+    @testfiledata = testfile.second
+    unless @testfiledata.present? then @telemetrydata = "N/A" end
+    telemetryfile = Tail.new('../telemetry.txt').tail(1).flatten
+    @telemetrytime = telemetryfile.first
+    @telemetrydata = telemetryfile.second
+    unless @telemetrydata.present? then @telemetrydata = "N/A" end
   end
 end

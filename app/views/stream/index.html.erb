@@ -1,13 +1,13 @@
-<h1 align="center" class="mainheading">Stream of telemetry data in JSON</h1>
-
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div class="panel panel-default">
       <div class="panel-body homepanel">
         <h3 class="paneltitle">Raw JSON data</h3>
         <p>JSON GOES HERE</p>
-        <p>last line of test.txt is:  <b style="color: red"><%= @lastline %></b></p>
-        <p>last read telemetry is: <b style="color: blue"><%= @telemetry %></b></p>
+        <p>test.txt last updated <%= time_ago_in_words(@testfiletime) %> ago</p>
+        <p>test.txt reading:  <b style="color: red"><%= @testfiledata %></b></p>
+        <p>telemetry last updated <%= time_ago_in_words(@telemetrytime) %> ago</p>
+        <p>latest telemetry reading: <b style="color: blue"><%= @telemetrydata %></b></p>
       </div>
     </div>
   </div>
