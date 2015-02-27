@@ -9,39 +9,59 @@ end
   #read last n lines of a file
 class Tail < Readfile
   def tail(lines)
-  path = @location
-  n = lines
-  file = File.open(path, "r")
-  buffer_s = 512
-  line_count = 0
-  file.seek(0, IO::SEEK_END)
+    path = @location
+    n = lines
+    file = File.open(path, "r")
+    buffer_s = 512
+    line_count = 0
+    file.seek(0, IO::SEEK_END)
 
-  offset = file.pos # we start at the end
+    offset = file.pos # we start at the end
 
-  while line_count <= n && offset > 0
-    to_read = if (offset - buffer_s) < 0
-                offset
-              else
-                buffer_s
-              end
+    while line_count <= n && offset > 0
+      to_read = if (offset - buffer_s) < 0
+                  offset
+                else
+                  buffer_s
+                end
 
-    file.seek(offset-to_read)
-    data = file.read(to_read)
+      file.seek(offset-to_read)
+      data = file.read(to_read)
 
-    data.reverse.each_char do |c|
-      if line_count > n
-        offset += 1
-        break
-      end
-      offset -= 1
-      if c == "\n"
-        line_count += 1
+      data.reverse.each_char do |c|
+        if line_count > n
+          offset += 1
+          break
+        end
+        offset -= 1
+        if c == "\n"
+          line_count += 1
+        end
       end
     end
+
+    file.seek(offset)
+    data = file.read
+    return {file.mtime => data}
+  end
+end
+
+#get an image file
+class Image < Readfile
+  def image()
+    path = @location
+    file = File.open(path, "r")
+    image = file.read
+    return {file.mtime => image}
   end
 
-  file.seek(offset)
-  data = file.read
-  return {file.mtime => data}
-end
+  def latest()
+    dir = @location
+    files = Dir.entries(dir).collect { |file| file }.sort { |file2,file1| File.mtime(dir+file1) <=> File.mtime(dir+file2) }
+    files -= ['.', '..']
+    latest = files[1]
+    file = File.open(latest, "r")
+    data = file.read
+    return {file.mtime => data}
+  end
 end
