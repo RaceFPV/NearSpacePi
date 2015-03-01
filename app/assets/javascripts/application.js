@@ -16,3 +16,4 @@
 //= require turbolinks
 //= require toastr
 //= require nprogress
+//= require jquery-ui-map.min.js
