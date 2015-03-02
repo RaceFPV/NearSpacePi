@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require toastr
 //= require nprogress
-//= require jquery-ui-map.min.js
+//= require underscore
+//= require underscore
+//= require gmaps/google
