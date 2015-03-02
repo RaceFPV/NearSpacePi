@@ -1,12 +1,16 @@
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers([
-    {
-      "lat": 51.5033630,
-      "lng": -0.1276250,
-      "infowindow": "test!"
-    }
-  ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
+$( document ).ready(function() {
+  $('#map').width($('#map').innerWidth() - 50);
+  $('#map').height('350px');
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 51.5033630,
+        "lng": -0.1276250,
+        "infowindow": "test!"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
 });

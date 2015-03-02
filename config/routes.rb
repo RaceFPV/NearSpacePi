@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   match 'stream', to: 'stream#index', via: 'get', as: 'stream'
   match 'about', to: 'home#about', via: 'get', as: 'about'
   match 'stream/:name', to: 'stream#show', via: 'get', as: 'custom_image'
+  match 'map', to: 'map#index', via: 'get', as: 'map'
 end
