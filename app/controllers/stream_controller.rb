@@ -6,10 +6,10 @@ class StreamController < ApplicationController
     unless @telemetrydata.present? then @telemetrydata = "N/A" end
     humidityfile = Tail.new('./streamed_data/humidity.txt').tail(1).flatten
     @humiditytime = humidityfile.first
+    unless @humiditydata.present? then @humiditydata = "N/A N/A" end
     @humiditydata = humidityfile.second.split(' ')
     @humiditytemp = @humiditydata.first.gsub('Temp=', '').gsub('*',' ')
     @humidity = @humiditydata.second.gsub('Humidity=', '')
-    unless @humiditydata.present? then @humiditydata = "N/A" end
     externalfile = Tail.new('./streamed_data/external.txt').tail(1).flatten
     @externaltime = externalfile.first
     @externaldata = externalfile.second.gsub('(','').gsub(')','')
