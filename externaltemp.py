@@ -1,6 +1,7 @@
 import os
 import glob
 import time
+import subprocess
  
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -10,10 +11,11 @@ device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
  
 def read_temp_raw():
-    f = open(device_file, 'r')
-    lines = f.readlines()
-    f.close()
-    return lines
+	catdata = subprocess.Popen(['cat',device_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	out,err = catdata.communicate()
+	out_decode = out.decode('utf-8')
+	lines = out_decode.split('\n')
+	return lines
  
 def read_temp():
     lines = read_temp_raw()
