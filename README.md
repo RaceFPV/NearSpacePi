@@ -20,8 +20,10 @@ FEATURING: Streaming of real time telemetry and video on a lightweight webpage
 * 5v for all components EXCEPT MCP3008
 * 3.3v for MCP3008
 * 4.7k resistor for external temp sensor
+* 4.7k resistor for humidity sensor
 * GPIO 2, GPIO 3 -- MPU6050
 * GPIO 4 --external temp sensor
+* GPIO 7 --humidity sensor
 * GPIO 14, GPIO 15 -- NEO-6M GPS
 * GPIO 9, GPIO 10, GPIO 11 -- RGB LED
 * GPIO 18 -> MCP3008 13
