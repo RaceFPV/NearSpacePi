@@ -2,12 +2,15 @@
   <div class="col-sm-8 col-sm-offset-2">
     <div class="panel panel-default">
       <div class="panel-body homepanel">
-        <h3 class="paneltitle">Raw JSON data</h3>
-        <p>JSON GOES HERE</p>
-        <p>test.txt last updated <%= time_ago_in_words(@testfiletime) %> ago</p>
-        <p>test.txt reading:  <b style="color: red"><%= @testfiledata %></b></p>
+        <h3 class="paneltitle">Raw data readouts</h3>
         <p>telemetry last updated <%= time_ago_in_words(@telemetrytime) %> ago</p>
         <p>latest telemetry reading: <b style="color: blue"><%= @telemetrydata %></b></p>
+        <p>humidity last updated <%= time_ago_in_words(@humiditytime) %> ago</p>
+        <p>latest humidity reading: <b style="color: blue"><%= @humidity %></b></p>
+        <p>internal temp last updated <%= time_ago_in_words(@humiditytime) %> ago</p>
+        <p>latest internal temp reading: <b style="color: blue"><%= @humiditytemp %></b></p>
+        <p>external temp last updated <%= time_ago_in_words(@externaltime) %> ago</p>
+        <p>latest external temp reading: <b style="color: blue"><%= @externaldata %>C</b></p>
       </div>
     </div>
   </div>
