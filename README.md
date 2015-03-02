@@ -11,14 +11,16 @@ FEATURING: Streaming of real time telemetry and video on a lightweight webpage
 * Raspberry pi
 * Raspberry pi camera
 * GY-86 attitude meter
-* Temp sensor
-* Humidity sensor
+* DHT-11 humidity sensor
+* DS18B20 temp sensor
 * NEO-6M GPS
+* RGB LED
+* 2x 4.7k resistor
 
 ### Pinouts
 
-* 5v for all components EXCEPT MCP3008
-* 3.3v for MCP3008
+* 5v for all components EXCEPT pull-ups
+* 3.3v for pull-ups on temp sensor
 * 4.7k resistor for external temp sensor
 * 4.7k resistor for humidity sensor
 * GPIO 2, GPIO 3 -- MPU6050
@@ -26,11 +28,6 @@ FEATURING: Streaming of real time telemetry and video on a lightweight webpage
 * GPIO 7 --humidity sensor
 * GPIO 14, GPIO 15 -- NEO-6M GPS
 * GPIO 9, GPIO 10, GPIO 11 -- RGB LED
-* GPIO 18 -> MCP3008 13
-* GPIO 23 -> MCP3008 12
-* GPIO 24 -> MCP3008 11
-* GPIO 25 -> MCP3008 10
-* MCP3008 1 -> humidity sensor
 
 
 ### Notes
