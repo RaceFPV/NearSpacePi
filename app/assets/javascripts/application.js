@@ -17,5 +17,4 @@
 //= require toastr
 //= require nprogress
 //= require underscore
-//= require underscore
 //= require gmaps/google

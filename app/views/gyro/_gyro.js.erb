@@ -1,0 +1,46 @@
+$( document ).ready(function() {
+var scene, camera, renderer;
+      var WIDTH  = $('#gyro').innerWidth() - 50;
+      var HEIGHT = '350';
+      var SPEED = 0.01;
+      function init() {
+          scene = new THREE.Scene();
+          initCube();
+          initCamera();
+          initRenderer();
+          document.getElementById("gyro").appendChild(renderer.domElement);
+      }
+      function initCamera() {
+          camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
+          camera.position.set(0, 5, 7);
+          camera.lookAt(scene.position);
+      }
+      function initRenderer() {
+          renderer = new THREE.WebGLRenderer({ antialias: true });
+          renderer.setSize(WIDTH, HEIGHT);
+      }
+      function initCube() {
+          cube = new THREE.Mesh(new THREE.BoxGeometry(4, 4, 4), new THREE.MeshNormalMaterial());
+          scene.add(cube);
+      }
+      function render() {
+          requestAnimationFrame(render);
+          renderer.render(scene, camera);
+      }
+      var angle = 0;
+      init();
+      render();
+      //////////////////////////////////////////////////
+      //var socket = io();
+      //socket.on('data', function(data){
+      //  var dataArray = data.data.split("\t");
+        // console.log(dataArray);
+      //  rotateCube(Number(dataArray[1]), Number(dataArray[2]), Number(dataArray[3]));
+      //});
+      //function rotateCube(yaw, pitch, roll) {
+     //     cube.rotation.x = roll * (Math.PI/180);
+      //    cube.rotation.z = pitch * (Math.PI/180);
+     //     cube.rotation.y = yaw * (Math.PI/180);
+      //}
+
+});

@@ -2,12 +2,12 @@
   <div class="col-sm-12">
     <div class="panel panel-default">
       <div class="panel-body homepanel" style="width: 100%;">
-        <h3 class="paneltitle">Known GPS coords</h3>
-        <div id="map" style="width: 100%; height: 100%;"></div>
+        <h3 class="paneltitle">Current Gyro Estimation</h3>
+        <div id="gyro" style="width: 100%; height: 350px;"></div>
       </div>
     </div>
   </div>
 </div>
 <script>
-  <%= render partial: 'map/map.js.erb' %>
+  <%= render partial: 'gyro.js.erb' %>
 </script>

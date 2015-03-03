@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   match 'about', to: 'home#about', via: 'get', as: 'about'
   match 'stream/:name', to: 'stream#show', via: 'get', as: 'custom_image'
   match 'map', to: 'map#index', via: 'get', as: 'map'
+  match 'gyro', to: 'gyro#index', via: 'get', as: 'gyro'
 end
