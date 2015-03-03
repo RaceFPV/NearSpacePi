@@ -33,14 +33,14 @@ var scene, camera, renderer;
       //////////////////////////////////////////////////
       //var socket = io();
       //socket.on('data', function(data){
-      //  var dataArray = data.data.split("\t");
-        // console.log(dataArray);
-      //  rotateCube(Number(dataArray[1]), Number(dataArray[2]), Number(dataArray[3]));
+      <% unless @gyrodata == "N/A" %>
+        rotateCube(Number(<%= @gyrodata.first %>), Number(<%= @gyrodata.second %>), Number(<%= @gyrodata.third %>));
+      <% end %>
       //});
-      //function rotateCube(yaw, pitch, roll) {
-     //     cube.rotation.x = roll * (Math.PI/180);
-      //    cube.rotation.z = pitch * (Math.PI/180);
-     //     cube.rotation.y = yaw * (Math.PI/180);
-      //}
+      function rotateCube(yaw, pitch, roll) {
+          cube.rotation.x = roll * (Math.PI/180);
+          cube.rotation.z = pitch * (Math.PI/180);
+          cube.rotation.y = yaw * (Math.PI/180);
+      }
 
 });
