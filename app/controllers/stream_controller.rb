@@ -1,9 +1,9 @@
 class StreamController < ApplicationController
   def index
-    telemetryfile = Tail.new('./streamed_data/telemetry.txt').tail(1).flatten
-    @telemetrytime = telemetryfile.first
-    @telemetrydata = telemetryfile.second
-    unless @telemetrydata.present? then @telemetrydata = "N/A" end
+    gyrofile = Tail.new('./streamed_data/gyro.txt').tail(1).flatten
+    @gyrotime = gyrofile.first
+    @gyrodata = gyrofile.second
+    unless @gyrodata.present? then @gyrodata = "N/A" end
     humidityfile = Tail.new('./streamed_data/humidity.txt').tail(1).flatten
     @humiditytime = humidityfile.first
     unless @humiditydata.present? then @humiditydata = "N/A N/A" end
