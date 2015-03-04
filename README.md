@@ -29,7 +29,7 @@ FEATURING: Streaming of real time telemetry and video on a lightweight webpage
 * GPIO 14, GPIO 15 -- NEO-6M GPS
 * GPIO 9, GPIO 10, GPIO 11 -- RGB LED
 
-* Schematic: http://i.imgur.com/Q8LdvWs.jpg
+* Schematic: ![alt tag](https://raw.github.com/slacker87/NearSpacePi/master/docs/nearspacepi_bb.png)
 
 ### Notes
 
